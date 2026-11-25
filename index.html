@@ -208,8 +208,10 @@ p{margin:0}
 .svc .delivers b{display:block;color:var(--ink);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.5625rem;margin-bottom:.3rem}
 .usecases{margin-top:2.25rem;border-top:2px solid var(--rule);padding-top:1.1rem}
 .usecases h4{font-family:var(--util);font-size:.5625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
-.uclist{font-family:var(--disp);font-size:clamp(1rem,2.6vw,1.5rem);line-height:1.35;text-transform:uppercase;letter-spacing:-.01em;margin-top:.8rem}
-.uclist span{color:var(--red);padding:0 .4rem}
+.uclist{list-style:none;margin:.9rem 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);column-gap:2.5rem;counter-reset:uc}
+@media (min-width:46rem){.uclist{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.uclist li{counter-increment:uc;display:flex;gap:.9rem;align-items:baseline;padding:.7rem 0;border-bottom:1px solid rgba(17,17,19,.12);font-family:var(--disp);font-size:clamp(1.0625rem,2vw,1.3125rem);line-height:1.15;text-transform:uppercase;letter-spacing:-.01em}
+.uclist li::before{content:counter(uc,decimal-leading-zero);flex:none;width:1.5rem;font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.12em;color:var(--red)}
 
 /* packages */
 .pkg-sec{border-bottom:2px solid var(--rule);background:var(--paper-2)}
@@ -413,8 +415,16 @@ footer .wrap{padding-block:1.5rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
     </div>
 
     <div class="usecases">
-      <h4>Companies bring C&Oslash;NVERGENCE in when they need</h4>
-      <p class="uclist">To launch a new product<span>/</span>To scale marketing from 0 to 1<span>/</span>To prepare for Series A or B growth<span>/</span>To build the first marketing team<span>/</span>To fix broken marketing operations<span>/</span>To reposition the brand narrative<span>/</span>To prepare for IPO or acquisition</p>
+      <h4>When companies bring C&Oslash;NVERGENCE in</h4>
+      <ol class="uclist">
+        <li>Launching a new product</li>
+        <li>Scaling marketing from 0 to 1</li>
+        <li>Preparing for Series A or B growth</li>
+        <li>Building the first marketing team</li>
+        <li>Fixing broken marketing operations</li>
+        <li>Repositioning the brand narrative</li>
+        <li>Preparing for an IPO or acquisition</li>
+      </ol>
     </div>
   </div>
 </section>
