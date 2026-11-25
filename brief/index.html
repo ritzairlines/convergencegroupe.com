@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Project Brief | CØNVERGENCE</title>
+<meta name="description" content="Tell CØNVERGENCE what you're building and where you want it to land. About 5 minutes.">
+<meta name="author" content="Ritz Mpindi">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://convergencegroupe.com/brief/">
+<meta name="theme-color" content="#FBFAF8">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CØNVERGENCE">
+<meta property="og:title" content="CØNVERGENCE · Project Brief">
+<meta property="og:description" content="Tell us what you're building and where you want it to land. About 5 minutes.">
+<meta property="og:url" content="https://convergencegroupe.com/brief/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CØNVERGENCE · Project Brief">
+<meta name="twitter:description" content="Tell us what you're building and where you want it to land. About 5 minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap">
+<style>
+/* Layout: one question per screen, broadsheet masthead on top, a red progress rule, the question set large on paper, quiet controls bottom right. */
+:root{
+  --paper:#FBFAF8;--paper-2:#F1EFE9;--ink:#111113;--red:#CE3118;--grey:#55555A;--line:#DCD8CF;--field:#FFFFFF;--on-red:#FFFFFF;
+  --disp:"Anton",Impact,"Haettenschweiler",sans-serif;
+  --text:"Newsreader",Georgia,"Times New Roman",serif;
+  --util:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#121214;--paper-2:#1B1B1E;--ink:#F3F1EC;--red:#E8492D;--grey:#A3A3AA;--line:#35353B;--field:#1B1B1E;--on-red:#FFFFFF;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#121214;--paper-2:#1B1B1E;--ink:#F3F1EC;--red:#E8492D;--grey:#A3A3AA;--line:#35353B;--field:#1B1B1E;--on-red:#FFFFFF;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--text);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.inner{max-width:44rem;margin:0 auto;width:100%}
+
+.mast{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:2px solid var(--ink)}
+.mast .inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.7rem;max-width:56rem}
+.brand{font-family:var(--disp);font-size:1.1rem;letter-spacing:.02em;text-transform:uppercase}
+.doc{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+.bar{height:3px;background:transparent;position:relative}
+.bar i{position:absolute;inset:0 auto 0 0;width:0;background:var(--red);transition:width .45s cubic-bezier(.22,1,.36,1)}
+
+main{flex:1;display:flex;align-items:center;padding-block:clamp(1.5rem,6vh,4rem) 6rem;min-height:0}
+.screen{width:100%}
+.screen[hidden]{display:none!important}
+.anim-in{animation:rise .5s cubic-bezier(.22,1,.36,1) both}
+.anim-back{animation:drop .5s cubic-bezier(.22,1,.36,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes drop{from{opacity:0;transform:translateY(-28px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.anim-in,.anim-back{animation:none}.bar i{transition:none}}
+
+.kick{font-family:var(--util);font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red);display:flex;gap:.6rem;align-items:baseline;margin:0 0 1rem}
+.kick span+span{color:var(--grey)}
+.q{font-family:var(--text);font-size:clamp(1.5rem,4.2vw,2.25rem);line-height:1.2;font-weight:400;margin:0;text-wrap:balance}
+.q .num{font-family:var(--util);font-size:.8rem;font-weight:600;color:var(--red);vertical-align:.45em;margin-right:.55rem;font-variant-numeric:tabular-nums}
+.hint{font-family:var(--text);font-style:italic;font-size:1.0625rem;color:var(--grey);margin:.6rem 0 0;line-height:1.45}
+
+.ans{margin-top:1.6rem;display:grid;gap:.9rem}
+.ans label{display:block;font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);margin-bottom:.35rem}
+input.f,textarea.f{width:100%;font-family:var(--text);font-size:clamp(1.125rem,2.6vw,1.375rem);color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--line);border-radius:0;padding:.45rem 0;outline:none;transition:border-color .2s}
+textarea.f{resize:none;min-height:3.2em;line-height:1.45;field-sizing:content;max-height:40vh}
+input.f::placeholder,textarea.f::placeholder{color:var(--grey);opacity:.55}
+input.f:focus,textarea.f:focus{border-color:var(--red)}
+.row3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+@media (max-width:560px){.row3{grid-template-columns:1fr}}
+.numbered{display:grid;grid-template-columns:1.2rem minmax(0,1fr);align-items:end;gap:.6rem}
+.numbered b{font-family:var(--util);font-size:.8rem;color:var(--red);padding-bottom:.7rem}
+
+.go{display:flex;align-items:center;flex-wrap:wrap;gap:.9rem;margin-top:1.6rem}
+.btn{font-family:var(--util);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:.8rem 1.3rem;cursor:pointer;border:2px solid var(--ink);background:var(--ink);color:var(--paper);transition:transform .15s,background .15s,border-color .15s}
+.btn:hover{background:var(--red);border-color:var(--red);color:var(--on-red)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.btn.red{background:var(--red);border-color:var(--red);color:var(--on-red)}
+.btn.red:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.keyhint{font-family:var(--util);font-size:.6875rem;color:var(--grey)}
+.keyhint kbd{font-family:var(--util);font-weight:600;color:var(--ink)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+/* welcome */
+.lock{font-family:var(--disp);font-size:clamp(3.25rem,13vw,7.5rem);line-height:.86;letter-spacing:-.02em;text-transform:uppercase;margin:0}
+.lock em{font-style:normal;color:var(--red)}
+.sub{font-family:var(--util);font-size:.6875rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-top:1.1rem;border-top:3px solid var(--red);padding-top:.7rem;max-width:34rem;line-height:1.9}
+.deck{font-size:clamp(1.25rem,3vw,1.625rem);line-height:1.35;margin:1.25rem 0 0;max-width:32rem}
+.deck i{color:var(--red)}
+
+/* review */
+.rev{margin-top:1.5rem;border-top:2px solid var(--ink)}
+.rev dl{margin:0}
+.rev .it{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:.3rem 1.25rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
+@media (max-width:560px){.rev .it{grid-template-columns:1fr}}
+.rev dt{font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);padding-top:.25rem}
+.rev dd{margin:0;font-size:1rem;line-height:1.45;white-space:pre-wrap;overflow-wrap:anywhere}
+.rev dd.empty{color:var(--grey);font-style:italic}
+.rev button.edit{all:unset;cursor:pointer;font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-left:.5rem}
+.send{margin-top:2rem;background:var(--ink);color:var(--paper);padding:1.4rem 1.5rem;display:grid;gap:.9rem}
+.send h3{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:1.75rem;line-height:1;margin:0;color:var(--paper)}
+.send p{margin:0;font-size:1rem;line-height:1.45;opacity:.8}
+.send .addr{font-family:var(--util);font-weight:600;font-size:1rem;color:var(--red);user-select:all;overflow-wrap:anywhere}
+.send .btn{border-color:var(--paper);background:var(--paper);color:var(--ink)}
+.send .btn:hover{background:var(--red);border-color:var(--red);color:var(--on-red)}
+.send .btn.ghost{background:transparent;color:var(--paper)}
+.status{font-family:var(--util);font-size:.75rem;min-height:1.1em;color:var(--paper);opacity:.85}
+.copybox{width:100%;min-height:8rem;font-family:var(--util);font-size:.8rem;background:var(--paper);color:var(--ink);border:0;padding:.75rem}
+
+.nav{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));display:flex;gap:2px;z-index:6}
+.nav button{width:2.6rem;height:2.6rem;border:0;background:var(--ink);color:var(--paper);cursor:pointer;display:grid;place-items:center;transition:background .15s}
+.nav button:first-child{border-radius:6px 0 0 6px}.nav button:last-child{border-radius:0 6px 6px 0}
+.nav button:hover{background:var(--red)}
+.nav button:disabled{opacity:.3;cursor:default;background:var(--ink)}
+.nav svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2}
+.foot{position:fixed;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(22px + env(safe-area-inset-bottom,0px));font-family:var(--util);font-size:.625rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);font-variant-numeric:tabular-nums}
+a.btn{text-decoration:none;display:inline-block}
+.brand a{color:inherit;text-decoration:none}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="gut"><div class="inner"><span class="brand"><a href="/">C&Oslash;NVERGENCE</a></span><span class="doc">Project brief</span></div></div>
+  <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+</header>
+
+<main class="gut"><div class="inner" id="stage" aria-live="polite"></div></main>
+
+<div class="foot" id="count" aria-hidden="true"></div>
+<nav class="nav" aria-label="Question navigation">
+  <button type="button" id="prev" aria-label="Previous question"><svg viewBox="0 0 14 14"><path d="M2 9.5 7 4.5l5 5"/></svg></button>
+  <button type="button" id="next" aria-label="Next question"><svg viewBox="0 0 14 14"><path d="M2 4.5 7 9.5l5-5"/></svg></button>
+</nav>
+
+<script>
+(function(){
+  var EMAIL = "ritz@convergencegroupe.com";
+  // Every field of the CØNVERGENCE client brief, in order.
+  var Q = [
+    {sec:"Brief Overview", fields:[{k:"overview", q:"In a few lines, what do you need, and why now?", area:true, ph:"Brief overview"}]},
+    {sec:"Scope", fields:[{k:"deliverables", q:"What exactly do you need delivered?", area:true, ph:"Deliverables"}]},
+    {sec:"Scope", fields:[{k:"kpis", q:"How will you measure success?", hint:"KPIs or success metrics: coverage, leads, sign-ups, revenue.", area:true}]},
+    {sec:"Scope", fields:[{k:"timeline", q:"What are the key milestones and deadlines?", area:true, ph:"Timeline"}]},
+    {sec:"Scope", fields:[{k:"budget", q:"What's the budget?", hint:"Parameters or a range is fine.", ph:"Budget"}]},
+    {sec:"Other Info", fields:[{k:"clients", q:"Which clients can you name?", area:true, ph:"Clients list"}]},
+    {sec:"Other Info", q:"Share the business numbers you're comfortable with.", hint:"Only what you're happy to see in print.", three:true,
+      fields:[{k:"team", lab:"Full-time team", ph:"e.g. 12"},{k:"revenue", lab:"Turnover / revenue", ph:"e.g. $2m"},{k:"growth", lab:"Projected growth", ph:"e.g. 50% in 2027"}]},
+    {sec:"Other Info", fields:[{k:"targets", q:"Where would you most like to land?", hint:"Press outlets or partners you'd like to land, e.g. The Drum, Campaign, Adweek.", area:true, ph:"Sample targets"}]}
+  ];
+  var LABELS = {overview:"Brief overview",deliverables:"Deliverables",kpis:"KPIs / success metrics",timeline:"Timeline",budget:"Budget",
+    clients:"Clients list",team:"Full-time team",revenue:"Turnover / revenue",growth:"Projected growth",targets:"Sample targets"};
+  var ORDER = Object.keys(LABELS);
+
+  var STORE = "convergence-brief-draft-v2";
+  var A = {};
+  try { A = JSON.parse(localStorage.getItem(STORE) || "{}") || {}; } catch(e) { A = {}; }
+  function save(){ try { localStorage.setItem(STORE, JSON.stringify(A)); } catch(e) {} }
+
+  var stage = document.getElementById("stage"), bar = document.getElementById("bar"), count = document.getElementById("count");
+  var prevB = document.getElementById("prev"), nextB = document.getElementById("next");
+  var TOTAL = Q.length;           // question screens; 0 = welcome, TOTAL+1 = review
+  var cur = 0;
+
+  function el(tag, cls, text){ var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  function field(f, labelled){
+    var wrap = el("div");
+    var input;
+    if (f.area) { input = el("textarea", "f"); input.rows = 2; }
+    else { input = el("input", "f"); input.type = "text"; input.autocomplete = "off"; }
+    input.id = "f-" + f.k; input.name = f.k;
+    if (f.ph) input.placeholder = f.ph;
+    input.value = A[f.k] || "";
+    input.addEventListener("input", function(){ A[f.k] = input.value; save(); });
+    if (labelled) { var l = el("label", null, f.lab); l.htmlFor = input.id; wrap.appendChild(l); }
+    else input.setAttribute("aria-label", f.q || LABELS[f.k]);
+    wrap.appendChild(input);
+    return wrap;
+  }
+
+  function welcome(){
+    var s = el("section", "screen");
+    var h = el("h1", "lock"); h.innerHTML = "Project <em>brief</em>"; s.appendChild(h);
+    s.appendChild(el("p", "sub", "CØNVERGENCE · About 5 minutes · Skip anything that doesn't apply"));
+    var d = el("p", "deck"); d.innerHTML = "Tell us what you&rsquo;re building <i>and where you want it to land.</i>"; s.appendChild(d);
+    var go = el("div", "go");
+    var b = el("button", "btn red", Object.keys(A).some(function(k){ return A[k]; }) ? "Pick up where you left off" : "Start the brief");
+    b.type = "button"; b.addEventListener("click", function(){ to(1, 1); }); go.appendChild(b);
+    var kh = el("span", "keyhint"); kh.innerHTML = "or press <kbd>Enter ↵</kbd>"; go.appendChild(kh);
+    s.appendChild(go);
+    return s;
+  }
+
+  function question(i){
+    var item = Q[i - 1], s = el("section", "screen");
+    var k = el("p", "kick"); k.appendChild(el("span", null, item.sec)); s.appendChild(k);
+    var qt = item.q || item.fields[0].q, hint = item.hint || item.fields[0].hint;
+    var h = el("h2", "q"); var n = el("span", "num", String(i).padStart(2, "0") + " →"); h.appendChild(n); h.appendChild(document.createTextNode(qt)); h.id = "q-" + i; s.appendChild(h);
+    if (hint) s.appendChild(el("p", "hint", hint));
+    var ans = el("div", "ans" + (item.three ? " row3" : ""));
+    item.fields.forEach(function(f, j){
+      if (item.numbered) { var r = el("div", "numbered"); r.appendChild(el("b", null, String(j + 1))); var fw = field(f); fw.querySelector(".f").setAttribute("aria-label", "Reason " + (j + 1)); r.appendChild(fw); ans.appendChild(r); }
+      else ans.appendChild(field(f, item.three));
+    });
+    s.appendChild(ans);
+    var go = el("div", "go");
+    var b = el("button", "btn", i === TOTAL ? "Review" : "OK"); b.type = "button"; b.addEventListener("click", function(){ to(i + 1, 1); }); go.appendChild(b);
+    var multi = item.fields.length === 1 && item.fields[0].area;
+    var kh = el("span", "keyhint"); kh.innerHTML = COARSE ? "" : multi ? "press <kbd>Enter ↵</kbd> to continue · <kbd>Shift + Enter</kbd> for a new line" : "press <kbd>Enter ↵</kbd>"; go.appendChild(kh);
+    s.appendChild(go);
+    return s;
+  }
+
+  function summaryText(){
+    var lines = ["CØNVERGENCE client brief", ""];
+    ORDER.forEach(function(k){ var v = (A[k] || "").trim(); if (v) { lines.push(LABELS[k].toUpperCase()); lines.push(v); lines.push(""); } });
+    return lines.join("\n").trim();
+  }
+
+  function review(){
+    var s = el("section", "screen");
+    var k = el("p", "kick"); k.appendChild(el("span", null, "Review")); s.appendChild(k);
+    s.appendChild(el("h2", "q", "Here's your brief."));
+    s.appendChild(el("p", "hint", "Check it over, then send it to us. Tap Edit to change an answer."));
+    var rev = el("div", "rev"), dl = el("dl");
+    var answered = 0;
+    Q.forEach(function(item, idx){
+      item.fields.forEach(function(f){
+        var it = el("div", "it"), dt = el("dt", null, LABELS[f.k]), v = (A[f.k] || "").trim();
+        var e = el("button", "edit", "Edit"); e.type = "button"; e.addEventListener("click", function(){ to(idx + 1, -1); });
+        dt.appendChild(e);
+        var dd = el("dd", v ? null : "empty", v || "Skipped");
+        if (v) answered++;
+        it.appendChild(dt); it.appendChild(dd); dl.appendChild(it);
+      });
+    });
+    rev.appendChild(dl); s.appendChild(rev);
+
+    var send = el("div", "send");
+    send.appendChild(el("h3", null, "Send it back"));
+    send.appendChild(el("p", null, "Email your answers to Ritz, and add any attachments before you send. We'll set up a short call to talk it through."));
+    var text = summaryText(), body = text, cut = false;
+    if (encodeURIComponent(body).length > 7000) { while (encodeURIComponent(body).length > 7000) body = body.slice(0, -200); body += "\n\n[Pasted the rest below]"; cut = true; }
+    var mail = el("a", "btn", "Email my answers");
+    mail.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Project brief for CØNVERGENCE") + "&body=" + encodeURIComponent(body);
+    var copy = el("button", "btn ghost", "Copy my answers"); copy.type = "button";
+    var status = el("p", "status"); status.setAttribute("role", "status");
+    var box = el("textarea", "copybox"); box.readOnly = true; box.id = "answers-box"; box.setAttribute("aria-label", "Your answers, ready to copy"); box.value = text;
+    function pick(){ box.focus(); box.select(); try { box.setSelectionRange(0, box.value.length); } catch(e) {} }
+    copy.addEventListener("click", function(){
+      function fallback(){ pick(); status.textContent = "Selected. Copy it, then paste it into an email to " + EMAIL + "."; }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function(){ status.textContent = "Copied. Paste it into an email to " + EMAIL + "."; }, fallback);
+      } else fallback();
+    });
+    mail.addEventListener("click", function(){ status.textContent = cut ? "Your email app should open. Your brief is long, so copy your answers and paste the rest in." : "Your email app should open with your answers. If it doesn't, copy them and email " + EMAIL + "."; });
+    var go = el("div", "go"); go.style.marginTop = "0";
+    go.appendChild(mail); go.appendChild(copy); send.appendChild(go);
+    send.appendChild(el("p", null, "Or write to " )).appendChild(el("span", "addr", EMAIL));
+    send.appendChild(box); send.appendChild(status);
+    if (!answered) status.textContent = "You haven't answered anything yet.";
+    s.appendChild(send);
+    return s;
+  }
+
+  function render(dir){
+    stage.textContent = "";
+    var s = cur === 0 ? welcome() : cur > TOTAL ? review() : question(cur);
+    s.classList.add(dir < 0 ? "anim-back" : "anim-in");
+    stage.appendChild(s);
+    bar.style.width = (cur === 0 ? 0 : Math.min(100, (cur / (TOTAL + 1)) * 100)) + "%";
+    count.textContent = cur >= 1 && cur <= TOTAL ? cur + " / " + TOTAL : "";
+    prevB.disabled = cur === 0; nextB.disabled = cur > TOTAL;
+    var first = s.querySelector(".f");
+    if (first && window.matchMedia("(pointer:fine)").matches) { try { first.focus({preventScroll:true}); } catch(e) { first.focus(); } }
+    window.scrollTo(0, 0);
+  }
+  function to(i, dir){ cur = Math.max(0, Math.min(TOTAL + 1, i)); render(dir); }
+
+  prevB.addEventListener("click", function(){ to(cur - 1, -1); });
+  nextB.addEventListener("click", function(){ to(cur + 1, 1); });
+
+  var COARSE = window.matchMedia && window.matchMedia("(pointer:coarse)").matches;
+  document.addEventListener("keydown", function(e){
+    if (e.key !== "Enter" || e.isComposing) return;
+    var t = e.target;
+    if (t && t.tagName === "TEXTAREA" && (e.shiftKey || COARSE)) return;
+    if (t && (t.tagName === "BUTTON" || t.tagName === "A")) return;
+    if (cur > TOTAL) return;
+    if (t && t.classList && t.classList.contains("f")) {
+      var fs = Array.prototype.slice.call(stage.querySelectorAll(".f")), ix = fs.indexOf(t);
+      if (ix > -1 && ix < fs.length - 1) { e.preventDefault(); fs[ix + 1].focus(); return; }
+    }
+    e.preventDefault(); to(cur + 1, 1);
+  });
+
+  render(1);
+})();
+</script>
+</body>
+</html>
